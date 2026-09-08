@@ -60,6 +60,7 @@ Specifications live under `openspec/`:
 
 ### 🧩 Available AI Skills & Subagents
 - **`openspec`**: Propose, apply, verify, and archive feature specs via OpenSpec.
+- **`auto-task` / `openspec-task-cycle`**: Multi-agent concurrent or sequential task execution from `openspec/context/tasks.md` with atomic claiming, user permission gate, and auto-pass execution.
 - **`react-native-architect`**: Blueprint generator for MVVM screens, ViewModels, MST stores, and repositories.
 - **`ui-component-builder`**: Layout and form builder using the 31 components in `@app/ui`.
 

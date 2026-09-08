@@ -38,6 +38,7 @@ Located in `.claude/skills/`:
 
 ### OpenSpec Skills & Commands
 - **`openspec`**: Master Spec-Driven Development lifecycle coordinator (`explore`, `propose`, `apply`, `verify`, `sync`, `archive`, `update`).
+- **`auto-task` / `openspec-task-cycle`**: Concurrently or sequentially executes tasks from `openspec/context/` through the full OpenSpec lifecycle (Claim -> Propose -> Apply -> Archive -> Report -> Repeat) with atomic task claiming, user permission gate, and auto-pass execution.
 - **`openspec-propose`** (`/opsx:propose <name>`): Plan new features, create `proposal.md`, task checklists, and delta specs.
 - **`openspec-apply`** (`/opsx:apply <name>`): Execute approved proposals, follow task checklist, and enforce layer boundaries.
 - **`openspec-sync`** (`/opsx:sync <name>`): Merge delta specifications into main base specs (`openspec/specs/`).

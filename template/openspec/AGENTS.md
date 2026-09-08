@@ -60,6 +60,13 @@ When system-wide configurations, dependencies, or high-level architecture evolve
 yarn opsx update
 ```
 
+### Step 8: Automated Multi-Agent Task Cycle (`auto-task` / `openspec-task-cycle`)
+When executing tasks from a context backlog (`openspec/context/tasks.md`):
+1. **Permission Gate**: Always obtain user approval before claiming any pending task (`- [ ]`).
+2. **Atomic Claim**: Immediately mark the task as `IN_PROGRESS` (`- [/] ... [IN_PROGRESS: <WorkerID> | Started: <ISO>]`).
+3. **Auto-Pass Protocol**: Execute Propose, Apply, Verify, and Archive autonomously without interrupting the user.
+4. **Metrics Reporting**: Update the context file to `DONE` (`- [x] ... [DONE: <Date> | change: <Name> | Duration: <Duration> | Tokens: <Tokens>]`).
+
 ---
 
 ## ⚡ 2. Token Efficiency & Output Guidelines

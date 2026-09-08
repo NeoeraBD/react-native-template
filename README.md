@@ -51,6 +51,7 @@ Specifications live under `openspec/`:
     *   `/opsx:apply <name>`: Implement tasks adhering to spec
     *   `/opsx:verify`: Validate TypeScript compile & linting
     *   `/opsx:archive <name>`: Sync delta to base specs and archive
+*   **`auto-task` / `openspec-task-cycle`**: Multi-agent concurrent or sequential task execution from `openspec/context/tasks.md` with atomic claiming, user permission gate, and auto-pass execution.
 *   **`react-native-architect`**: Step-by-step generator for MVVM screens, ViewModels, MST stores, and repositories.
 *   **`ui-component-builder`**: Screen layout and form composition using the 31 components in `@app/ui`.
 

@@ -43,6 +43,7 @@ Located in `.agents/skills/`:
 
 ### OpenSpec Skills
 - **`openspec`**: Master lifecycle coordinator for Spec-Driven Development.
+- **`auto-task` / `openspec-task-cycle`**: Concurrently or sequentially executes tasks from `openspec/context/` through the full OpenSpec lifecycle (Claim -> Propose -> Apply -> Archive -> Report -> Repeat) with atomic task claiming, user permission gate, and auto-pass execution.
 - **`openspec-propose`**: Propose features, create `proposal.md`, checklist, and delta specs (`yarn opsx propose <name>`).
 - **`openspec-apply`**: Implement approved change proposals following checklist (`yarn opsx apply <name>`).
 - **`openspec-sync`**: Merge delta specs from proposals into main domain specs (`yarn opsx sync <name>`).
