@@ -1,0 +1,11 @@
+---
+description: OpenSpec Spec-Driven Development rules
+globs: ["openspec/**/*"]
+---
+# OpenSpec Rules
+
+- Consult `openspec/specs/` before implementing new features or refactors.
+- For non-trivial modifications, propose changes under `openspec/changes/<change-name>/proposal.md`.
+- Implement changes following the spec delta and checklist.
+- Verify with `yarn tsc -p tsconfig.json --noEmit && yarn lint`.
+- Archive completed changes and update base specs.

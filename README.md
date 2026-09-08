@@ -29,10 +29,38 @@ npx @react-native-community/cli@latest init MyNewApp --template /path/to/react-n
 
 ---
 
-## 🤖 AI-Assisted Development
-To optimize token costs, reduce development time, and maintain strict null safety when using Generative AI agents and assistants (Claude, Cursor, Gemini, ChatGPT), please refer to:
+## 🤖 AI-Assisted Pair-Programming & Spec-Driven Development (OpenSpec)
+
+This template includes first-class integration for Generative AI coding assistants (**Claude Code**, **Google Gemini / Antigravity**, and **Cursor / Windsurf**), combining **Spec-Driven Development (OpenSpec)** with specialized custom agent skills.
+
+### 📖 OpenSpec SDD Workflow
+Specifications live under `openspec/`:
+*   [System Architecture & Tech Stack](openspec/project.md)
+*   [AI Agent Rules & SDD Protocols](openspec/AGENTS.md)
+*   [Base Specifications](openspec/specs/):
+    *   `specs/architecture/spec.md`: MVVM boundaries and repository conventions
+    *   `specs/state-management/spec.md`: MobX-State-Tree models & MMKV persistence
+    *   `specs/navigation/spec.md`: React Navigation 7 hierarchies and param lists
+    *   `specs/ui-components/spec.md`: 31 Material Design 3 component specifications
+    *   `specs/network-and-cache/spec.md`: Axios client, offline cache TTL, and downloader
+*   `openspec/changes/`: Active change proposals (`yarn opsx propose <feature-name>`)
+
+### 🧩 Custom AI Skills & Slash Commands
+*   **`openspec`**: Spec-Driven Development lifecycle:
+    *   `/opsx:propose <name>`: Propose a new feature with spec delta
+    *   `/opsx:apply <name>`: Implement tasks adhering to spec
+    *   `/opsx:verify`: Validate TypeScript compile & linting
+    *   `/opsx:archive <name>`: Sync delta to base specs and archive
+*   **`react-native-architect`**: Step-by-step generator for MVVM screens, ViewModels, MST stores, and repositories.
+*   **`ui-component-builder`**: Screen layout and form composition using the 31 components in `@app/ui`.
+
+### 🤖 Assistant Configurations
+*   **Claude Code**: `CLAUDE.md`, `.claude/settings.json`, `.claude/skills/`, `.claude/agents/`
+*   **Google Gemini & Antigravity**: `GEMINI.md`, `.gemini/agents/`, `.agents/skills/`
+*   **Cursor & Windsurf**: `.cursorrules`, `.cursor/rules/*.mdc`
 *   [AI Agent & Developer Guidelines](AI_DEVELOPMENT_GUIDE.md)
 *   [Workspace Coding Instructions (.instructions.md)](.instructions.md)
+
 
 ---
 
@@ -44,27 +72,39 @@ react-native-template/
 ├── post-init.script.js       # Post-init script (creates .env, logs instructions)
 ├── package.json              # Template npm package metadata
 ├── bin/cli.js                # create-neoera-app CLI executable
+├── openspec/                 # OpenSpec Spec-Driven Development specs & proposals
+├── .claude/                  # Claude Code settings, skills, and subagents
+├── .agents/skills/           # Antigravity & Gemini skills
+├── .gemini/                  # Gemini agent configurations
+├── .cursor/rules/            # Cursor IDE rules (.mdc)
+├── CLAUDE.md                 # Claude Code project guidelines
+├── GEMINI.md                 # Gemini & Antigravity guidelines
+├── .cursorrules              # Cursor rules
+├── .instructions.md          # Workspace coding instructions
+├── AI_DEVELOPMENT_GUIDE.md   # Prompt optimization & strict null-safety guide
 └── template/                 # The project scaffolding copied to new projects
     ├── App.tsx               # Main entry point (contexts and setups)
-├── index.js                  # Component registry
-├── package.json              # Monorepo root configuration defining Yarn Workspaces
-├── react-native.config.js    # Asset link definitions (points to packages/ui for fonts)
-├── babel.config.js           # Reanimated, Worklets, and Env plugin configuration
-├── metro.config.js           # Metro bundler config (with symlinks support enabled)
-├── tsconfig.json             # TypeScript rules (with paths aliases mapped to workspaces)
-├── env.d.ts                  # TypeScript declaration file for environment variables
-├── .env                      # Local environment configuration variables (git ignored)
-├── .env.example              # Example environment configuration template file
-├── android/                  # Android Gradle build configs (linked for icons)
-├── ios/                      # iOS Xcode project configs (linked for fonts & icons)
-├── src/                      # Main App source (navigation routing & screens)
-│   ├── navigation/           # Navigation routers (Drawer, Bottom Tabs, Material Top Tabs, Stack)
-│   └── screens/              # Screen-wise nested Views & ViewModel Hooks
-│       ├── login/            # Login view and VM hook
-│       ├── home/             # Home feed view and VM hook
-│       ├── dashboard/        # Interactive components showcase view
-│       ├── profile/          # User profile details view
-│       └── settings/         # Light/dark mode & English/Bangla switch view
+    ├── index.js              # Component registry
+    ├── package.json          # Monorepo root configuration defining Yarn Workspaces
+    ├── react-native.config.js # Asset link definitions (points to packages/ui for fonts)
+    ├── babel.config.js       # Reanimated, Worklets, and Env plugin configuration
+    ├── metro.config.js       # Metro bundler config (with symlinks support enabled)
+    ├── tsconfig.json         # TypeScript rules (with paths aliases mapped to workspaces)
+    ├── env.d.ts              # TypeScript declaration file for environment variables
+    ├── .env.example          # Example environment configuration template file
+    ├── CLAUDE.md             # Claude Code instructions for new projects
+    ├── GEMINI.md             # Gemini instructions for new projects
+    ├── openspec/             # OpenSpec SDD baseline specs for new projects
+    ├── android/              # Android Gradle build configs (linked for icons)
+    ├── ios/                  # iOS Xcode project configs (linked for fonts & icons)
+    ├── src/                  # Main App source (navigation routing & screens)
+    │   ├── navigation/       # Navigation routers (Drawer, Bottom Tabs, Material Top Tabs, Stack)
+    │   └── screens/          # Screen-wise nested Views & ViewModel Hooks
+    │       ├── login/        # Login view and VM hook
+    │       ├── home/         # Home feed view and VM hook
+    │       ├── dashboard/    # Interactive components showcase view
+    │       ├── profile/      # User profile details view
+    │       └── settings/     # Light/dark mode & English/Bangla switch view
 └── packages/                 # Local Workspace Packages
     ├── core/                 # @app/core package (business logic, stores, network)
     │   ├── package.json      # Dependencies (axios, mmkv, mobx, i18next, etc.)

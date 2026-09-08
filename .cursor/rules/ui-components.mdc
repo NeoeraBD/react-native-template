@@ -1,0 +1,11 @@
+---
+description: Reusable UI Component rules using @app/ui and Material Design 3
+globs: ["packages/ui/src/**/*", "src/screens/**/*"]
+---
+# UI Component Rules
+
+- Prefer using the 31 components in `@app/ui` over raw React Native primitives.
+- For form fields, always use the React Hook Form wrappers (`CustomFormInput`, `CustomFormDropdown`, `CustomFormDatePicker`, `CustomFormFilePicker`, `CustomFormSwitch`).
+- Access theme colors using `useTheme()` from `react-native-paper`.
+- Custom style props must be typed as `StyleProp<ViewStyle>` or `StyleProp<TextStyle>`.
+- Typography adheres to the Inter font weights (400 Regular, 500 Medium, 600 SemiBold, 700 Bold).

@@ -33,12 +33,24 @@
     "template.config.js",
     "post-init.script.js",
     "bin",
-    "README.md"
+    "README.md",
+    "openspec",
+    ".claude",
+    ".agents",
+    ".gemini",
+    ".cursor",
+    ".cursorrules",
+    ".instructions.md",
+    "AI_DEVELOPMENT_GUIDE.md",
+    "CLAUDE.md",
+    "GEMINI.md"
   ],
   "scripts": {
-    "lint": "cd template && eslint ."
+    "lint": "cd template && eslint .",
+    "opsx": "openspec"
   },
   "devDependencies": {
+    "@fission-ai/openspec": "^1.12.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8"
   }
