@@ -1,0 +1,16 @@
+---
+description: MVVM Architecture and Repository Pattern rules
+globs: ["src/screens/**/*", "packages/core/src/repositories/**/*"]
+---
+# MVVM & Repository Pattern Rules
+
+- Views (`src/screens/**/<Feature>Screen.tsx`):
+  - Pure React component. No business logic or state mutations.
+  - Must not import `apiClient` or `MMKV`.
+  - Wrap in `observer` from `mobx-react-lite` if observing MobX stores.
+- ViewModels (`src/screens/**/use<Feature>ViewModel.ts`):
+  - Custom React hook managing component states, form validation, and calls to repositories.
+  - No direct Axios or MMKV storage calls.
+- Repositories (`packages/core/src/repositories/<Entity>Repository.ts`):
+  - Single source of truth. Manages caching (`offlineCache`) and API fetches (`apiRequest`).
+  - Sanitize API responses defensively with `?.` and `??`.

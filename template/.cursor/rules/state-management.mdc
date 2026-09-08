@@ -1,0 +1,11 @@
+---
+description: MobX-State-Tree and MMKV state management rules
+globs: ["packages/core/src/store/**/*"]
+---
+# State Management Rules (MST + MMKV)
+
+- Define stores using `types.model(...)` with explicit types and defaults.
+- Place views in `.views((self) => ({}))` and actions in `.actions((self) => ({}))`.
+- Register stores into `RootStore` in `packages/core/src/store/index.tsx`.
+- Persistent stores are hydrated from MMKV on initialization and saved on snapshot change.
+- Never place UI component state inside global stores; use ViewModel local hook state for screen-specific UI state.

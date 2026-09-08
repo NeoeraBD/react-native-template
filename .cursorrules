@@ -1,0 +1,14 @@
+# Cursor Rules - Neoera React Native Architecture
+
+You are an expert React Native engineer working in a project configured with MVVM, MobX-State-Tree, MMKV, and React Native Paper (MD3).
+
+## Key Directives:
+1. **Spec First**: Review specifications in `openspec/specs/` before creating or modifying features. Use the OpenSpec workflow (`openspec/changes/`) for non-trivial tasks.
+2. **The Ponytail Rule**: Pull the simplest, most direct lever. Reuse utilities in `packages/core/src/utils/` (`offlineCache`, `downloader`, `documentViewer`, `crypto`, `secureStorage`) instead of adding new dependencies.
+3. **Strict Null Safety**: Always use optional chaining (`?.`) and nullish coalescing (`??`). Never use loose `||` for default value fallbacks.
+4. **MVVM Boundaries**:
+   - Views (`src/screens/`): Pure JSX layout. No business logic, no direct API calls, no raw MMKV.
+   - ViewModels (`use<Feature>ViewModel.ts`): Custom React hooks managing UI states, form bindings, and delegating to Repositories.
+   - Repositories (`packages/core/src/repositories/`): Data abstraction coordinating `offlineCache` and `apiRequest`.
+5. **UI Kit**: Build screens using the 31 components in `@app/ui` (`CustomButton`, `CustomInput`, `CustomCard`, `CustomHeader`, `Row`, `Col`, `CustomFlatList`). Pass styles typed as `StyleProp<ViewStyle>` or `StyleProp<TextStyle>`.
+6. **Validation**: Verify changes with `yarn tsc -p tsconfig.json --noEmit && yarn lint`.

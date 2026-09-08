@@ -1,0 +1,58 @@
+{
+  "name": "react-native-template-neoera",
+  "version": "0.0.1",
+  "description": "Enterprise-ready React Native CLI template featuring MVVM architecture, MobX-State-Tree, MMKV, i18next, React Native Paper, React Hook Form, and modular workspace packages (@app/core & @app/ui)",
+  "main": "template.config.js",
+  "bin": {
+    "create-neoera-app": "./bin/cli.js",
+    "react-native-template-neoera": "./bin/cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NeoeraBD/react-native-template.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-template",
+    "template",
+    "neoera",
+    "mobx-state-tree",
+    "mvvm",
+    "typescript",
+    "react-native-paper",
+    "mmkv"
+  ],
+  "author": "Neoera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NeoeraBD/react-native-template/issues"
+  },
+  "homepage": "https://github.com/NeoeraBD/react-native-template#readme",
+  "files": [
+    "template",
+    "template.config.js",
+    "post-init.script.js",
+    "bin",
+    "README.md",
+    "openspec",
+    ".claude",
+    ".agents",
+    ".gemini",
+    ".cursor",
+    ".cursorrules",
+    ".instructions.md",
+    "AI_DEVELOPMENT_GUIDE.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "scripts"
+  ],
+  "scripts": {
+    "lint": "cd template && eslint .",
+    "opsx": "node scripts/opsx.js"
+  },
+  "devDependencies": {
+    "@fission-ai/openspec": "^1.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8"
+  }
+}

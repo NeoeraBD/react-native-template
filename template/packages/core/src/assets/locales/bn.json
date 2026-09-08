@@ -1,0 +1,61 @@
+{
+  "login": {
+    "title": "স্বাগতম",
+    "subtitle": "চালিয়ে যেতে আপনার অ্যাকাউন্টে সাইন ইন করুন",
+    "emailLabel": "ইমেইল",
+    "emailPlaceholder": "আপনার ইমেইল লিখুন",
+    "passwordLabel": "পাসওয়ার্ড",
+    "passwordPlaceholder": "আপনার পাসওয়ার্ড লিখুন",
+    "button": "লগইন করুন",
+    "invalidEmail": "অনুগ্রহ করে একটি বৈধ ইমেল ঠিকানা লিখুন",
+    "invalidPassword": "পাসওয়ার্ড অবশ্যই কমপক্ষে ৬ অক্ষরের হতে হবে",
+    "loading": "লগইন হচ্ছে...",
+    "errorTitle": "অনুমোদন ব্যর্থ হয়েছে",
+    "successMessage": "সফলভাবে লগইন করা হয়েছে!"
+  },
+  "home": {
+    "title": "হোম ফিড",
+    "welcome": "স্বাগতম, {{name}}!",
+    "postsTitle": "সাম্প্রতিক পোস্টসমূহ",
+    "loading": "পোস্ট লোড হচ্ছে...",
+    "fabLabel": "পোস্ট যোগ করুন",
+    "refreshing": "ডেটা রিফ্রেশ করা হচ্ছে...",
+    "error": "পোস্ট লোড করতে ব্যর্থ হয়েছে"
+  },
+  "dashboard": {
+    "title": "ড্যাশবোর্ড",
+    "stats": "অ্যাপ পরিসংখ্যান",
+    "totalUsers": "মোট ব্যবহারকারী",
+    "activeSessions": "সক্রিয় সেশন",
+    "dataUsage": "স্টোরেজ ব্যবহার",
+    "interactiveDemo": "ইন্টারেক্টিভ রিইউজেবল উপাদান",
+    "fabPressed": "ফ্লোটিং অ্যাকশন বাটন টিপলে!"
+  },
+  "profile": {
+    "title": "ব্যবহারকারী প্রোফাইল",
+    "username": "ব্যবহারকারীর নাম",
+    "email": "ইমেইল ঠিকানা",
+    "role": "ভূমিকা",
+    "logoutButton": "লগআউট",
+    "logoutConfirm": "আপনি কি নিশ্চিত যে আপনি লগআউট করতে চান?"
+  },
+  "settings": {
+    "title": "সেটিংস",
+    "themeSection": "থিম সেটিংস",
+    "themeLight": "লাইট থিম",
+    "themeDark": "ডার্ক থিম",
+    "themeSystem": "সিস্টেম ডিফল্ট",
+    "languageSection": "ভাষা সেটিংস",
+    "languageEn": "English",
+    "languageBn": "বাংলা"
+  },
+  "common": {
+    "confirm": "নিশ্চিত করুন",
+    "cancel": "বাতিল",
+    "ok": "ঠিক আছে",
+    "theme": "থিম",
+    "language": "ভাষা",
+    "dark": "ডার্ক",
+    "light": "লাইট"
+  }
+}
