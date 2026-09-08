@@ -8,7 +8,7 @@ Anyone can create a new React Native project with this template in one command:
 
 ### Recommended: Direct from GitHub
 ```bash
-npx @react-native-community/cli@latest init MyNewApp --template https://github.com/NeoeraBD/react-native-template
+npx @react-native-community/cli@latest init MyNewApp --template https://github.com/NeoeraBD/react-native-template --pm yarn
 ```
 
 ### Via npm Package (when published)
