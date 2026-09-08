@@ -2,18 +2,50 @@
 
 A professional, ready-to-use React Native CLI template configured with a **purely functional architecture** (Custom Hooks for ViewModels and plain observable structures), **MobX-State-Tree (MST)** for state management, **MMKV** for secure storage, **Axios** for API queries, **i18next** for localization, **React Hook Form** for validation, and a set of **31 custom reusable UI components** built on **React Native Paper** (Material Design MD3).
 
-## 🤖 AI-Assisted Development
-To optimize token costs, reduce development time, and maintain strict null safety when using Generative AI agents and assistants (Claude, Cursor, Gemini, ChatGPT), please refer to:
-*   [AI Agent & Developer Guidelines](/react-native-template/template/AI_DEVELOPMENT_GUIDE.md)
-*   [Workspace Coding Instructions (.instructions.md)](/react-native-template/template/.instructions.md)
+## 🚀 Create a New Project
+
+Anyone can create a new React Native project with this template in one command:
+
+### Recommended: Direct from GitHub
+```bash
+npx @react-native-community/cli@latest init MyNewApp --template https://github.com/NeoeraBD/react-native-template
+```
+
+### Via npm Package (when published)
+```bash
+npx @react-native-community/cli@latest init MyNewApp --template react-native-template-neoera
+```
+*(or with standard React Native CLI: `npx react-native init MyNewApp --template react-native-template-neoera`)*
+
+### Via dedicated CLI wrapper
+```bash
+npx create-neoera-app MyNewApp
+```
+
+### From local template repository
+```bash
+npx @react-native-community/cli@latest init MyNewApp --template /path/to/react-native-template
+```
 
 ---
 
-## 📂 Project Structure & File Guide
+## 🤖 AI-Assisted Development
+To optimize token costs, reduce development time, and maintain strict null safety when using Generative AI agents and assistants (Claude, Cursor, Gemini, ChatGPT), please refer to:
+*   [AI Agent & Developer Guidelines](AI_DEVELOPMENT_GUIDE.md)
+*   [Workspace Coding Instructions (.instructions.md)](.instructions.md)
+
+---
+
+## 📂 Template Architecture & Structure
 
 ```
-neoera/
-├── App.tsx                   # Main entry point (contexts and setups)
+react-native-template/
+├── template.config.js        # React Native CLI template definition
+├── post-init.script.js       # Post-init script (creates .env, logs instructions)
+├── package.json              # Template npm package metadata
+├── bin/cli.js                # create-neoera-app CLI executable
+└── template/                 # The project scaffolding copied to new projects
+    ├── App.tsx               # Main entry point (contexts and setups)
 ├── index.js                  # Component registry
 ├── package.json              # Monorepo root configuration defining Yarn Workspaces
 ├── react-native.config.js    # Asset link definitions (points to packages/ui for fonts)
@@ -957,13 +989,13 @@ To maintain code standards, prevent runtime errors, and ensure type safety, the 
 ### 1. Local Git Hook Validation (Husky & lint-staged)
 We utilize **Husky** and **lint-staged** to validate files locally before changes are pushed:
 *   **Pre-Commit Hook**: Runs `eslint --fix` on staged `.ts` and `.tsx` files. If there are unresolved lint/style issues, the commit is blocked.
-*   **Pre-Push Hook**: Runs the full compiler type check (`yarn tsc -p _tsconfig.json --noEmit`). If there are any compile errors, the push is blocked.
+*   **Pre-Push Hook**: Runs the full compiler type check (`yarn tsc -p tsconfig.json --noEmit`). If there are any compile errors, the push is blocked.
 
 ### 2. Remote CI Gating (GitHub Actions)
-For every pull request and merge targeting `main`, `master`, or `develop`, a remote pipeline ([ci.yml](/react-native-template/template/.github/workflows/ci.yml)) automatically runs:
+For every pull request and merge targeting `main`, `master`, or `develop`, a remote pipeline ([ci.yml](.github/workflows/ci.yml)) automatically runs:
 1. Dependency installation checks with cached node modules.
 2. Code style validation (`yarn lint`).
-3. Strict type compilation verification (`yarn tsc -p _tsconfig.json --noEmit`).
+3. Strict type compilation verification (`yarn tsc -p tsconfig.json --noEmit`).
 
 Branches cannot be merged if any pipeline step fails.
 
@@ -971,30 +1003,48 @@ Branches cannot be merged if any pipeline step fails.
 
 ## ⚙️ Initializing a New Project
 
-Initialize a new project using the path to this template package:
+You can initialize a brand new project anywhere using any of these methods:
 
+### Method A: Directly from GitHub (Recommended)
+```bash
+npx @react-native-community/cli@latest init MyNewApp --template https://github.com/NeoeraBD/react-native-template
+```
+
+### Method B: Via Published npm Package
+```bash
+npx @react-native-community/cli@latest init MyNewApp --template react-native-template-neoera
+```
+
+### Method C: Via `create-neoera-app`
+```bash
+npx create-neoera-app MyNewApp
+```
+
+### Method D: From Local Clone
 ```bash
 npx @react-native-community/cli@latest init MyNewApp --template /absolute/path/to/react-native-template
 ```
 
-### Steps to Run Post-Initialization:
+### Steps to Run After Project Creation:
 
-1. **Install dependencies:**
+1. **Navigate to the Project:**
    ```bash
    cd MyNewApp
-   yarn install
    ```
 
-2. **Link Assets (Fonts and Icons):**
-   ```bash
-   npx react-native-asset
-   ```
+2. **Dependencies & Environment:**
+   Dependencies are installed automatically by the CLI. Ensure `.env` is configured (automatically created from `.env.example`).
 
-3. **Install Pods (for iOS):**
+3. **Install CocoaPods (iOS only):**
    ```bash
    cd ios && pod install && cd ..
    ```
 
-4. **Start and Run:**
+4. **Link Assets (Fonts and Icons):**
+   ```bash
+   npx react-native-asset
+   ```
+
+5. **Start and Run:**
    - Run Android: `yarn android`
    - Run iOS: `yarn ios`

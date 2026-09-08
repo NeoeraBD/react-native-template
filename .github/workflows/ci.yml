@@ -20,13 +20,13 @@ jobs:
         with:
           node-version: "20.x"
           cache: "yarn"
-          cache-dependency-path: "./yarn.lock"
+          cache-dependency-path: "./template/yarn.lock"
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: cd template && yarn install --frozen-lockfile
 
       - name: Run Code Style & Linter Check (ESLint)
-        run: yarn lint
+        run: cd template && yarn lint
 
       - name: Run TypeScript Type Validation (Typecheck)
-        run: yarn tsc -p _tsconfig.json --noEmit
+        run: cd template && yarn tsc -p tsconfig.json --noEmit
