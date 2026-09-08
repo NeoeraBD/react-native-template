@@ -35,23 +35,27 @@ Always review and follow specifications under `openspec/`:
   - `specs/ui-components/spec.md`: 31 Material Design 3 components in `@app/ui`.
   - `specs/network-and-cache/spec.md`: Network client and caching layer.
 
-### OpenSpec Workflow
-When adding non-trivial features or modifying existing architecture:
-1. Create a proposal in `openspec/changes/<feature-name>/proposal.md` using `openspec/changes/template.md`.
-2. Implement code adhering strictly to the spec.
-3. Validate compilation: `yarn tsc -p tsconfig.json --noEmit && yarn lint`.
-4. Archive change and update specs in `openspec/specs/`.
-
 ---
 
 ## 🧩 3. Available Skills & Agent Blueprints
 
 Located in `.agents/skills/`:
-- `openspec`: Proposal, application, verification, and archive lifecycle.
-- `react-native-architect`: Generates MVVM screens, ViewModels, MST stores, and repositories.
-- `ui-component-builder`: Composes mobile UIs and forms using `@app/ui` components.
 
-Specialized agent configurations located in `.gemini/agents/`:
+### OpenSpec Skills
+- **`openspec`**: Master lifecycle coordinator for Spec-Driven Development.
+- **`openspec-propose`**: Propose features, create `proposal.md`, checklist, and delta specs (`yarn opsx propose <name>`).
+- **`openspec-apply`**: Implement approved change proposals following checklist (`yarn opsx apply <name>`).
+- **`openspec-sync`**: Merge delta specs from proposals into main domain specs (`yarn opsx sync <name>`).
+- **`openspec-archive`**: Sync delta specs and archive completed change proposals (`yarn opsx archive <name>`).
+- **`openspec-update`**: Refresh project documentation, dependencies, and agent configurations (`yarn opsx update`).
+- **`openspec-verify`**: Validate TypeScript compilation and lint rules (`yarn opsx verify`).
+
+### React Native Skills
+- **`react-native-architect`**: Generates MVVM screens, ViewModels, MST stores, and repositories.
+- **`ui-component-builder`**: Composes mobile UIs and forms using `@app/ui` components.
+
+### Specialized Agent Blueprints
+Located in `.gemini/agents/`:
 - `rn-architect`: Specialist in MVVM, MST, MMKV, and repository layers.
 - `ui-designer`: Specialist in React Native Paper MD3 and `@app/ui` components.
 - `qa-auditor`: Specialist in TypeScript strict mode and null-safety verification.
@@ -78,4 +82,10 @@ yarn lint
 
 # OpenSpec CLI
 yarn opsx status
+yarn opsx propose <name>
+yarn opsx apply <name>
+yarn opsx verify
+yarn opsx sync <name>
+yarn opsx archive <name>
+yarn opsx update
 ```

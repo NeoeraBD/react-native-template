@@ -9,7 +9,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "opsx": "openspec",
+    "opsx": "node scripts/opsx.js",
     "start": "react-native start",
     "test": "jest",
     "typecheck": "tsc -p tsconfig.json --noEmit"

@@ -43,11 +43,12 @@
     ".instructions.md",
     "AI_DEVELOPMENT_GUIDE.md",
     "CLAUDE.md",
-    "GEMINI.md"
+    "GEMINI.md",
+    "scripts"
   ],
   "scripts": {
     "lint": "cd template && eslint .",
-    "opsx": "openspec"
+    "opsx": "node scripts/opsx.js"
   },
   "devDependencies": {
     "@fission-ai/openspec": "^1.12.0",

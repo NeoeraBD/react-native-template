@@ -4,46 +4,60 @@ Welcome AI Agent. This document defines your operational rules, workflow protoco
 
 ---
 
-## 🎯 1. Spec-Driven Development (SDD) Workflow
+## 🎯 1. Spec-Driven Development (SDD) Lifecycle
 
 Before writing or modifying any code, follow this protocol:
 
-### Step 1: Read the Base Specifications
-Consult the domain specs in `openspec/specs/`:
+### Step 1: Consult the Main Specifications
+Read the domain specifications in `openspec/specs/` to understand existing boundaries:
 - [Architecture Spec](specs/architecture/spec.md): MVVM boundaries, ViewModel rules, Repository patterns.
 - [State Management Spec](specs/state-management/spec.md): MobX-State-Tree models, RootStore, MMKV hydration.
 - [Navigation Spec](specs/navigation/spec.md): React Navigation 7 hierarchies, param lists, safe ref.
 - [UI Components Spec](specs/ui-components/spec.md): 31 ready-to-use `@app/ui` components with props and examples.
 - [Network & Cache Spec](specs/network-and-cache/spec.md): Axios client, token refresh queue, `offlineCache` TTL.
 
-### Step 2: Propose Changes (OpenSpec Workflow)
-For non-trivial features, refactors, or architectural modifications:
-1. Create a change proposal directory: `openspec/changes/<change-id>/`
-2. Add `proposal.md` specifying:
-   - Motivation and context
-   - Proposed changes & schema updates
-   - Spec delta (what changes in `openspec/specs/`)
-   - Step-by-step implementation checklist
-3. Alternatively, invoke the OpenSpec CLI command: `yarn opsx propose <change-name>` or use the `/opsx:propose` skill.
+### Step 2: Propose Changes (`/opsx:propose <name>`)
+For non-trivial features, refactors, or schema modifications:
+1. Run `yarn opsx propose <name>` or invoke the `openspec-propose` skill.
+2. Structure `openspec/changes/<name>/proposal.md`:
+   - Motivation and technical rationale.
+   - Files and workspaces affected (`@app/core`, `@app/ui`, `src/`).
+   - Delta specs under `openspec/changes/<name>/specs/<domain>/spec.md`.
+   - Sequential checklist of implementation tasks.
+3. Solicit user approval before modifying code.
 
-### Step 3: Implement Targeted Diffs
-- Implement code strictly following the approved change proposal.
-- Preserve existing comments, docstrings, and non-target code.
-- Avoid modifying code outside the scope of the change.
+### Step 3: Implement Code (`/opsx:apply <name>`)
+1. Implement tasks sequentially according to `proposal.md`.
+2. Adhere to layer rules:
+   - Views: Pure JSX layout and event forwarding via `@app/ui`.
+   - ViewModels: Custom React hooks managing local UI state. No direct Axios or MMKV.
+   - Repositories: Data abstraction coordinating `offlineCache` and `apiRequest`.
+3. Check off tasks in `proposal.md` as they are completed: `- [x] Task`.
 
-### Step 4: Validate
-Always run validation checks before declaring a task complete:
+### Step 4: Validate Implementation (`/opsx:verify`)
+Run validation to ensure zero compilation or lint errors:
 ```bash
-# In template/ or project root
-yarn tsc -p tsconfig.json --noEmit
-yarn lint
+yarn opsx verify
+# Or manual: yarn tsc -p tsconfig.json --noEmit && yarn lint
+```
+Audit strict null safety (`?.`, `??`, defensive API mapping).
+
+### Step 5: Sync Delta Specs (`/opsx:sync <name>`)
+Merge delta specifications from `openspec/changes/<name>/specs/` into the Main Specs in `openspec/specs/` to prevent documentation rot:
+```bash
+yarn opsx sync <name>
 ```
 
-### Step 5: Archive Change
-Sync modified specs back to `openspec/specs/` and archive the proposal:
+### Step 6: Archive Completed Change (`/opsx:archive <name>`)
+Once verified and synced, move the change to history:
 ```bash
-yarn opsx archive <change-id>
-# Or use /opsx:archive skill
+yarn opsx archive <name>
+```
+
+### Step 7: Update Project Context (`/opsx:update`)
+When system-wide configurations, dependencies, or high-level architecture evolve:
+```bash
+yarn opsx update
 ```
 
 ---

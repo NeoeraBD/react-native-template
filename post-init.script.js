@@ -31,6 +31,7 @@ const itemsToEnsure = [
   'GEMINI.md',
   '.instructions.md',
   'AI_DEVELOPMENT_GUIDE.md',
+  'scripts',
 ];
 
 for (const item of itemsToEnsure) {

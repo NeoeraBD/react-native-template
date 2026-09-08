@@ -1,11 +1,18 @@
 ---
-description: OpenSpec Spec-Driven Development rules
+description: OpenSpec Spec-Driven Development rules and skill workflows
 globs: ["openspec/**/*"]
 ---
-# OpenSpec Rules
+# OpenSpec Spec-Driven Development Rules
 
 - Consult `openspec/specs/` before implementing new features or refactors.
-- For non-trivial modifications, propose changes under `openspec/changes/<change-name>/proposal.md`.
+- Available OpenSpec skills & commands:
+  - `openspec`: Master lifecycle runner
+  - `openspec-propose` (`yarn opsx propose <name>`): Scaffolds proposal and delta specs
+  - `openspec-apply` (`yarn opsx apply <name>`): Guides implementation following checklist
+  - `openspec-sync` (`yarn opsx sync <name>`): Merges delta specs into main domain specs
+  - `openspec-archive` (`yarn opsx archive <name>`): Moves completed proposal to archive
+  - `openspec-update` (`yarn opsx update`): Refreshes specs and agent configurations
+  - `openspec-verify` (`yarn opsx verify`): Validates TypeScript compile and linting
 - Implement changes following the spec delta and checklist.
 - Verify with `yarn tsc -p tsconfig.json --noEmit && yarn lint`.
-- Archive completed changes and update base specs.
+- Archive completed changes and ensure base specs in `openspec/specs/` are updated.

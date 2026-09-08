@@ -30,20 +30,24 @@ Always check and follow specifications in `openspec/`:
   - `ui-components/spec.md`: Complete guide to the 31 components in `@app/ui`.
   - `network-and-cache/spec.md`: Axios client, offline cache TTL, and downloader.
 
-### OpenSpec Slash Commands / Skills
-- `/opsx:propose <name>`: Propose a new feature or architectural change with spec delta.
-- `/opsx:apply <name>`: Implement approved change proposal.
-- `/opsx:verify`: Run type checking and linting.
-- `/opsx:archive <name>`: Archive completed change and sync specs.
-
 ---
 
 ## 🛠️ 3. Available Claude Skills
 
 Located in `.claude/skills/`:
-- `openspec`: Spec-driven development proposal and archive lifecycle.
-- `react-native-architect`: Generates MVVM screens, ViewModels, MST stores, and repositories.
-- `ui-component-builder`: Composes responsive UIs and forms using `@app/ui` components.
+
+### OpenSpec Skills & Commands
+- **`openspec`**: Master Spec-Driven Development lifecycle coordinator (`explore`, `propose`, `apply`, `verify`, `sync`, `archive`, `update`).
+- **`openspec-propose`** (`/opsx:propose <name>`): Plan new features, create `proposal.md`, task checklists, and delta specs.
+- **`openspec-apply`** (`/opsx:apply <name>`): Execute approved proposals, follow task checklist, and enforce layer boundaries.
+- **`openspec-sync`** (`/opsx:sync <name>`): Merge delta specifications into main base specs (`openspec/specs/`).
+- **`openspec-archive`** (`/opsx:archive <name>`): Auto-sync delta specs and move finished proposals to `archive/`.
+- **`openspec-update`** (`/opsx:update`): Refresh project documentation, dependencies, and agent instructions.
+- **`openspec-verify`** (`/opsx:verify`): Execute TypeScript strict compilation and ESLint audits.
+
+### React Native & UI Skills
+- **`react-native-architect`**: Generates MVVM screens, ViewModels, MST stores, and repositories.
+- **`ui-component-builder`**: Composes responsive UIs and forms using `@app/ui` components.
 
 ---
 
@@ -78,6 +82,11 @@ yarn lint
 # OpenSpec CLI
 yarn opsx status
 yarn opsx propose <feature-name>
+yarn opsx apply <feature-name>
+yarn opsx verify
+yarn opsx sync <feature-name>
+yarn opsx archive <feature-name>
+yarn opsx update
 
 # Start Metro bundler
 yarn start
