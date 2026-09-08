@@ -1,0 +1,61 @@
+{
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Sign in to your account to continue",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "button": "Login",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPassword": "Password must be at least 6 characters long",
+    "loading": "Logging in...",
+    "errorTitle": "Authentication Failed",
+    "successMessage": "Logged in successfully!"
+  },
+  "home": {
+    "title": "Home Feed",
+    "welcome": "Welcome, {{name}}!",
+    "postsTitle": "Recent Posts",
+    "loading": "Loading posts...",
+    "fabLabel": "Add Post",
+    "refreshing": "Refreshing data...",
+    "error": "Failed to load posts"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "stats": "App Statistics",
+    "totalUsers": "Total Users",
+    "activeSessions": "Active Sessions",
+    "dataUsage": "Storage Usage",
+    "interactiveDemo": "Interactive Reusable Components",
+    "fabPressed": "Floating Action Button pressed!"
+  },
+  "profile": {
+    "title": "User Profile",
+    "username": "Username",
+    "email": "Email Address",
+    "role": "Role",
+    "logoutButton": "Logout",
+    "logoutConfirm": "Are you sure you want to log out?"
+  },
+  "settings": {
+    "title": "Settings",
+    "themeSection": "Theme Settings",
+    "themeLight": "Light Theme",
+    "themeDark": "Dark Theme",
+    "themeSystem": "System Default",
+    "languageSection": "Language Settings",
+    "languageEn": "English",
+    "languageBn": "Bangla"
+  },
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "ok": "OK",
+    "theme": "Theme",
+    "language": "Language",
+    "dark": "Dark",
+    "light": "Light"
+  }
+}
