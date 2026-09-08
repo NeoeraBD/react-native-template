@@ -1,4 +1,4 @@
-package com.sohan
+package com.neoera
 
 import android.app.Application
 import com.facebook.react.PackageList

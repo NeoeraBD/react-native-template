@@ -22,13 +22,13 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-        <intent-filter android:label="filter_sohan">
+        <intent-filter android:label="filter_neoera">
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
-            <data android:scheme="sohan" />
-            <data android:scheme="https" android:host="sohan.com" />
-            <data android:scheme="http" android:host="sohan.com" />
+            <data android:scheme="neoera" />
+            <data android:scheme="https" android:host="neoera.com" />
+            <data android:scheme="http" android:host="neoera.com" />
         </intent-filter>
       </activity>
     </application>

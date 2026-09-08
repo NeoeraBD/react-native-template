@@ -8,7 +8,7 @@ import { NavigationLightTheme, NavigationDarkTheme } from '@app/ui';
 import { navigationRef } from './navigationRef';
 
 const linking = {
-  prefixes: ['sohan://', 'https://sohan.com'],
+  prefixes: ['neoera://', 'https://neoera.com'],
   config: {
     screens: {
       // Unauthenticated screen

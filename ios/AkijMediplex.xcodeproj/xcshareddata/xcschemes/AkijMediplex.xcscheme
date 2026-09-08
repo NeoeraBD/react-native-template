@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "sohan.app"
-               BlueprintName = "sohan"
-               ReferencedContainer = "container:sohan.xcodeproj">
+               BuildableName = "neoera.app"
+               BlueprintName = "neoera"
+               ReferencedContainer = "container:neoera.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "sohanTests.xctest"
-               BlueprintName = "sohanTests"
-               ReferencedContainer = "container:sohan.xcodeproj">
+               BuildableName = "neoeraTests.xctest"
+               BlueprintName = "neoeraTests"
+               ReferencedContainer = "container:neoera.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "sohan.app"
-            BlueprintName = "sohan"
-            ReferencedContainer = "container:sohan.xcodeproj">
+            BuildableName = "neoera.app"
+            BlueprintName = "neoera"
+            ReferencedContainer = "container:neoera.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "sohan.app"
-            BlueprintName = "sohan"
-            ReferencedContainer = "container:sohan.xcodeproj">
+            BuildableName = "neoera.app"
+            BlueprintName = "neoera"
+            ReferencedContainer = "container:neoera.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

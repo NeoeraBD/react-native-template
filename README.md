@@ -4,15 +4,15 @@ A professional, ready-to-use React Native CLI template configured with a **purel
 
 ## 🤖 AI-Assisted Development
 To optimize token costs, reduce development time, and maintain strict null safety when using Generative AI agents and assistants (Claude, Cursor, Gemini, ChatGPT), please refer to:
-*   [AI Agent & Developer Guidelines](file:///home/arpan/react-native-template/template/AI_DEVELOPMENT_GUIDE.md)
-*   [Workspace Coding Instructions (.instructions.md)](file:///home/arpan/react-native-template/template/.instructions.md)
+*   [AI Agent & Developer Guidelines](/react-native-template/template/AI_DEVELOPMENT_GUIDE.md)
+*   [Workspace Coding Instructions (.instructions.md)](/react-native-template/template/.instructions.md)
 
 ---
 
 ## 📂 Project Structure & File Guide
 
 ```
-MyNewApp/
+neoera/
 ├── App.tsx                   # Main entry point (contexts and setups)
 ├── index.js                  # Component registry
 ├── package.json              # Monorepo root configuration defining Yarn Workspaces
@@ -721,9 +721,9 @@ To add a new screen (e.g. `Dashboard`):
 
 The template is configured for deep linking (custom URL schemes and Universal/App Links) out-of-the-box:
 
-*   **iOS URL Scheme:** Registered in `Info.plist` under `CFBundleURLTypes` using the placeholder `sohan` (auto-renamed to your project name upon initialization).
+*   **iOS URL Scheme:** Registered in `Info.plist` under `CFBundleURLTypes` using the placeholder `neoera` (auto-renamed to your project name upon initialization).
 *   **iOS URL Handler:** Implemented inside `AppDelegate.swift` overriding `application(_:open:options:)` and Universal Links continuation.
-*   **Android Scheme & Hosts:** Configured in `AndroidManifest.xml` under `<intent-filter>` mapping the scheme `sohan` and host `sohan.com`.
+*   **Android Scheme & Hosts:** Configured in `AndroidManifest.xml` under `<intent-filter>` mapping the scheme `neoera` and host `neoera.com`.
 *   **React Navigation Mapping:** Configured inside `src/navigation/AppNavigator.tsx` pointing to nested screens:
     *   `login` -> Login Screen
     *   `main/home` -> Authenticated Home Screen
@@ -960,7 +960,7 @@ We utilize **Husky** and **lint-staged** to validate files locally before change
 *   **Pre-Push Hook**: Runs the full compiler type check (`yarn tsc -p _tsconfig.json --noEmit`). If there are any compile errors, the push is blocked.
 
 ### 2. Remote CI Gating (GitHub Actions)
-For every pull request and merge targeting `main`, `master`, or `develop`, a remote pipeline ([ci.yml](file:///home/arpan/react-native-template/template/.github/workflows/ci.yml)) automatically runs:
+For every pull request and merge targeting `main`, `master`, or `develop`, a remote pipeline ([ci.yml](/react-native-template/template/.github/workflows/ci.yml)) automatically runs:
 1. Dependency installation checks with cached node modules.
 2. Code style validation (`yarn lint`).
 3. Strict type compilation verification (`yarn tsc -p _tsconfig.json --noEmit`).
